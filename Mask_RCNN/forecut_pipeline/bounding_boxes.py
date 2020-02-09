@@ -9,18 +9,18 @@ import numpy as np
 from forecut_pipeline.pipeline import Pipeline
 
 
-class RemoveBg(Pipeline):
+class BoundingBoxes(Pipeline):
     def __init__(self, dst):
         self.dst = dst
 
         super().__init__()
 
     def map(self, data):
-        self.remove_bg(data)
+        self.bounding_boxes(data)
 
         return data
 
-    def remove_bg(self, data):
+    def bounding_boxes(self, data):
         if "result" not in data:
             return
 

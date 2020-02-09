@@ -1,7 +1,7 @@
 """ForeCut Pipeline :: Generate predictions"""
 
 
-from forecut_pipeline import Pipeline
+from forecut_pipeline.pipeline import Pipeline
 
 
 class Predict(Pipeline):
@@ -15,7 +15,8 @@ class Predict(Pipeline):
     def map(self, data):
         image = data["image"]
         results = self.model.detect([image], verbose=1)
-        data["predictions"] = predictions
+        result = results[0]
+        data["result"] = result
 
         return data
 

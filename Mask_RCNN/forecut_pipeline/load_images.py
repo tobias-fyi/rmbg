@@ -1,4 +1,4 @@
-"""rmbg pipeline :: load multiple images"""
+"""ForeCut Pipeline :: Load multiple images"""
 
 import skimage.io
 
@@ -26,9 +26,9 @@ class LoadImages(Pipeline):
         while self.has_next():
             try:
                 image_file = next(source)
-                image = skimage.io.imread(self.src)
+                image = skimage.io.imread(image_file)
 
-                data = {"image_id": self.src, "image": image}
+                data = {"image_id": image_file, "image": image}
 
                 if self.filter(data):
                     yield self.map(data)

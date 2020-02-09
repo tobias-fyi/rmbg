@@ -1,11 +1,13 @@
-"""rmbg Pipeline :: load single image file"""
+"""ForeCut \\ Pipeline :: Load single image file"""
+
+import os
 
 import skimage.io
 
 from forecut_pipeline.pipeline import Pipeline
 
 
-class CaptureImage(Pipeline):
+class LoadImage(Pipeline):
     """Pipeline task to capture single image file."""
 
     def __init__(self, src):
