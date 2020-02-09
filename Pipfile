@@ -22,6 +22,7 @@ Pillow = "*"
 Cython = "*"
 Keras = ">=2.0.8"
 pycocotools = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.7"
